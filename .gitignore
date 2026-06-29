@@ -1,23 +1,59 @@
 # ====================================================================
-# MASTER BLOCK PROTOCOL FOR USER BINARIES (~/.local/bin)
+# MANDATORY SECURITY BOUNDARIES
 # ====================================================================
+# Complete lock down of environments, credentials, keys, and tokens
+.env
+.env.*
+*.env
+credentials*
+*-credentials
+*secrets*
+*.pem
+*.key
+*.token
+*.cert
+*.crt
+*.p12
 
-# Step 1: Block absolutely everything in this directory by default
-*
+# Block local bash automation tools by default
+*.sh
+git-sync
+check-repo-secrets
 
-# Step 2: Whitelist this rules file so security tracking stays active
-!.gitignore
-!style.css
-!index.html
-!CNAME
-
-# do not ignore dir / check files in dir
-# !*/
-# !<filename>
+# EXPLICIT EXCEPTIONS: Allow only these verified operational scripts
+!sync-github.sh
+!check-repo-secrets.sh
 
 # ====================================================================
-# EXPLICIT OVERRIDES (Add exemptions below if needed)
+# DEVELOPMENT & SYSTEM ARTIFACTS
 # ====================================================================
-# If there is ever a completely public, generic script you want to track
-# in GitHub, un-comment the line below and replace 'scriptname':
-# !scriptname
+# Node / Build Tooling caches (if used for modern frontend components)
+node_modules/
+.npm/
+dist/
+build/
+
+# Linux/Ubuntu & OS system artifacts
+.DS_Store
+Thumbs.db
+.directory
+*~
+*.swp
+*.swo
+
+# Local text editor & IDE workspaces
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ====================================================================
+# PYTHON / VIRTUAL ENVIRONMENTS
+# ====================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/

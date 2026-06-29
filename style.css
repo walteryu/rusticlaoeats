@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Rustic Lao Eats - Complete Global Stylesheet (No Variables)
+   Rustic Lao Eats - Complete Global Editorial Stylesheet
    ========================================================================== */
 
 * {
@@ -10,14 +10,14 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #fcfaf7; /* Cream/Sand tone */
-    color: #2c2520;            /* Dark Charcoal Charcoal */
-    line-height: 1.6;
-    padding-bottom: 40px;
+    background-color: #fbf9f6; /* Soft cream/linen canvas background */
+    color: #2c2520;            /* Rich dark charcoal text */
+    line-height: 1.65;
+    padding-bottom: 60px;
 }
 
 .container {
-    max-width: 680px;
+    max-width: 720px; /* Slightly wider layout for better horizontal grid flow */
     margin: 0 auto;
     padding: 20px;
 }
@@ -28,208 +28,242 @@ body {
 
 header.hero {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(to bottom, #f2ede4, #fcfaf7);
+    padding: 70px 20px 50px 20px;
+    background: linear-gradient(to bottom, #f3ede2, #fbf9f6);
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #3b5340; /* Traditional Earthy Lao Green */
-    font-weight: 700;
+header.hero h1 {
+    font-size: 2.8rem;
+    color: #2b3d2f; /* Deep, luxurious Lao Forest Green */
+    font-weight: 800;
     letter-spacing: -0.03em;
 }
 
 .tagline {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #615249;
-    margin-top: 8px;
+    margin-top: 10px;
+    font-style: italic;
 }
 
 .social-links {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .social-links a {
-    color: #bc6c25; /* Warm Wood/Terracotta Orange */
+    color: #bc6c25; /* Warm terracotta clay accent */
     text-decoration: none;
-    margin: 0 10px;
-    font-weight: 500;
+    margin: 0 12px;
+    font-weight: 600;
     font-size: 0.95rem;
+    border-bottom: 1px dashed transparent;
+    transition: border-color 0.2s ease;
 }
 
 .social-links a:hover {
-    text-decoration: underline;
+    border-bottom-color: #bc6c25;
 }
 
 /* ==========================================================================
-   Main Landing Component Row (Pillars Grid)
+   Idea 1 & 4: Main Landing Component Row (Editorial Pillars)
    ========================================================================== */
 
 .pillar-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 30px;
+    gap: 24px;
+    margin-top: 40px;
 }
 
 .pillar-card {
-    background: #ffffff; /* Bright Solid White Box */
-    border: 1px solid #e6dfd5;
-    border-radius: 8px;
-    padding: 30px;
+    border-radius: 12px;
+    padding: 35px 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(44, 37, 32, 0.02);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+/* Idea 1: Distinct Dual-Tone Brand Colors for the Pillars */
+.pillar-card.articles-pillar {
+    background-color: #f7f0eb; /* Muted terracotta clay canvas tint */
+    border: 1px solid #ebdcd3;
+    border-top: 5px solid #bc6c25; /* Thick geometric top accent line */
+}
+
+.pillar-card.recipes-pillar {
+    background-color: #f0f4f1; /* Cool herb garden green canvas tint */
+    border: 1px solid #dee7e1;
+    border-top: 5px solid #3b5340; /* Thick geometric top accent line */
+}
+
+/* Idea 4: Cinematic Lift and Shadow on Hover */
+.pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(44, 37, 32, 0.08);
 }
 
 .pillar-card h2 {
-    font-size: 1.4rem;
-    color: #3b5340;
-    margin-top: 0;
-    margin-bottom: 12px;
-    border-bottom: none;
+    font-size: 1.6rem;
+    margin: 0 0 12px 0;
     padding-bottom: 0;
+    border-bottom: none;
 }
 
+.pillar-card.articles-pillar h2 { color: #8a4f1b; }
+.pillar-card.recipes-pillar h2 { color: #2b3d2f; }
+
 .pillar-card p {
-    font-size: 0.95rem;
-    color: #554840;
-    margin-bottom: 20px;
+    font-size: 0.98rem;
+    color: #4a3e36;
+    margin-bottom: 25px;
     flex-grow: 1;
 }
 
 /* ==========================================================================
-   Global Content Lists & General Cards
+   Idea 2: Elegant Text Layouts & Drop Caps (Print Media Look)
    ========================================================================== */
 
-h2 {
-    font-size: 1.4rem;
-    margin: 40px 0 20px 0;
-    color: #3b5340;
-    border-bottom: 1px solid #e6dfd5;
-    padding-bottom: 8px;
-}
-
-.card {
-    background: #ffffff;
-    border: 1px solid #e6dfd5;
-    border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 4px rgba(44, 37, 32, 0.02);
-}
-
-.content-list {
-    margin-top: 20px;
-}
-
-.content-list .card {
-    margin-bottom: 24px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.content-list .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(44, 37, 32, 0.06);
+/* Styling for standalone article or post content cards */
+.editorial-post p:first-of-type::first-letter {
+    font-size: 3.2rem;
+    font-weight: 800;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+    margin-top: 4px;
+    color: #bc6c25; /* Drop cap pulls brand color */
+    font-family: Georgia, serif;
 }
 
 /* ==========================================================================
-   Buttons and Links
+   Idea 3: Geometric Accent Boxes & Recipe Metadata Badges
+   ========================================================================== */
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e8e2d9;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 6px rgba(44, 37, 32, 0.01);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(44, 37, 32, 0.04);
+}
+
+/* Recipe Badge Row Layout Container */
+.badge-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+/* Individual Metadata Capsules */
+.badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.badge.time {
+    background-color: #eef2ef;
+    color: #2b3d2f;
+}
+
+.badge.level {
+    background-color: #f4eae1;
+    color: #8a4f1b;
+}
+
+/* ==========================================================================
+   Buttons and Form Elements
    ========================================================================== */
 
 .btn {
     display: inline-block;
-    background-color: #3b5340; /* Lao Green background button */
-    color: #ffffff !important;
-    padding: 10px 20px;
+    padding: 11px 22px;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    margin-top: 12px;
+    border-radius: 8px;
+    font-weight: 600;
     font-size: 0.9rem;
     text-align: center;
-    transition: background-color 0.15s ease;
+    transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
-.btn:hover {
-    background-color: #2b3d2f;
+/* Primary Green Buttons (Recipes Engine) */
+.btn-green {
+    background-color: #3b5340;
+    color: #ffffff !important;
 }
 
-/* Specific styling modifier for Article section button overrides */
-.pillar-card:first-child .btn, 
-.content-list article .btn {
-    background-color: #bc6c25; /* Earthy Wood Orange for articles */
+.btn-green:hover { background-color: #2b3d2f; }
+
+/* Warm Terracotta Buttons (Articles Engine) */
+.btn-orange {
+    background-color: #bc6c25;
+    color: #ffffff !important;
 }
 
-.pillar-card:first-child .btn:hover, 
-.content-list article .btn:hover {
-    background-color: #9d561b;
-}
+.btn-orange:hover { background-color: #9d561b; }
+
+.btn:active { transform: scale(0.98); }
 
 /* ==========================================================================
    Kitchen Essentials List Layout
    ========================================================================== */
 
+h2.section-title {
+    font-size: 1.5rem;
+    margin: 50px 0 20px 0;
+    color: #2b3d2f;
+    border-bottom: 1px solid #e8e2d9;
+    padding-bottom: 10px;
+}
+
 .essentials {
-    margin-top: 40px;
+    background-color: #ffffff;
+    border: 1px solid #e8e2d9;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
 }
 
-.essentials p {
-    color: #615249;
-    margin-bottom: 16px;
-}
-
-.gear-list {
-    list-style: none;
-}
-
-.gear-list li {
-    margin-bottom: 12px;
-}
+.gear-list { list-style: none; }
+.gear-list li { margin-bottom: 14px; border-bottom: 1px dashed #f0eae1; padding-bottom: 12px; }
+.gear-list li:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
 .gear-list a {
     color: #2c2520;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
-.gear-list a:hover {
-    color: #bc6c25;
-    text-decoration: underline;
-}
-
-/* ==========================================================================
-   Footer Content Architecture
-   ========================================================================== */
+.gear-list a:hover { color: #bc6c25; }
 
 footer {
     text-align: center;
-    margin-top: 60px;
-    font-size: 0.85rem;
+    margin-top: 80px;
+    font-size: 0.88rem;
     color: #8c7b70;
 }
 
 /* ==========================================================================
-   Responsive Adaptations (Mobile Layout Engine)
+   Responsive Adaptations
    ========================================================================== */
 
 @media (max-width: 600px) {
-    header.hero {
-        padding: 40px 15px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .pillar-row {
-        grid-template-columns: 1fr; /* Force single column on vertical viewports */
-        gap: 16px;
-    }
-    
-    .pillar-card {
-        padding: 20px;
-    }
+    header.hero { padding: 50px 15px 30px 15px; }
+    header.hero h1 { font-size: 2.2rem; }
+    .pillar-row { grid-template-columns: 1fr; gap: 16px; }
+    .pillar-card { padding: 25px 20px; }
 }

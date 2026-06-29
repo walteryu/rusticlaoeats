@@ -21,17 +21,31 @@
     </header>
 
     <main class="container">
-        <!-- The Two Core Pillars: Articles & Recipes Side-by-Side -->
+        <!-- The Three Core Pillars: Articles, Recipes, & Gallery Side-by-Side -->
         <section class="pillar-row">
-            <div class="pillar-card articles-pillar">
-                <h2>Articles</h2>
-                <p>Deep dives into family narratives, cultural food history from Vientiane, and kitchen philosophy.</p>
-                <a href="articles/" class="btn btn-orange">Read Articles</a>
-            </div>
-            <div class="pillar-card recipes-pillar">
-                <h2>Recipes</h2>
-                <p>Step-by-step walkthroughs, traditional techniques, and practical ingredient lists.</p>
-                <a href="recipes/" class="btn btn-green">Explore Recipes</a>
+            <div class="pillars-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px auto; max-width: 1200px; padding: 0 20px;">
+                
+                <!-- Pillar 1: Articles -->
+                <div class="pillar-card" style="border: 1px solid #eee; padding: 24px; border-radius: 8px; text-align: center;">
+                    <h2>Articles</h2>
+                    <p style="color: #666; margin-bottom: 20px;">Deep dives into ancestral traditions, heavy granite mortars, and herb sourcing journeys.</p>
+                    <a href="articles/" class="btn btn-green">Read Articles</a>
+                </div>
+
+                <!-- Pillar 2: Recipes -->
+                <div class="pillar-card" style="border: 1px solid #eee; padding: 24px; border-radius: 8px; text-align: center;">
+                    <h2>Recipes</h2>
+                    <p style="color: #666; margin-bottom: 20px;">Step-by-step traditional kitchen guides from Papaya Salad to Vientiane Pork Larb.</p>
+                    <a href="recipes/" class="btn btn-green">Explore Recipes</a>
+                </div>
+
+                <!-- Pillar 3: Gallery (The New Visual Hub) -->
+                <div class="pillar-card" style="border: 1px solid #eee; padding: 24px; border-radius: 8px; text-align: center; background: #fafafa;">
+                    <h2>Visual Gallery</h2>
+                    <p style="color: #666; margin-bottom: 20px;">A raw photo collection captured directly across our kitchen table and local sourcing trips.</p>
+                    <a href="gallery.html" class="btn btn-green">View Gallery</a>
+                </div>
+
             </div>
         </section>
 

@@ -1,114 +1,39 @@
-:root {
-    --bg-color: #fcfaf7;
-    --text-color: #2c2520;
-    --primary-color: #3b5340; /* Earthy Lao green */
-    --accent-color: #bc6c25;  /* Warm rustic wood tone */
-    --card-bg: #ffffff;
-    --border-color: #e6dfd5;
+/* Pillar Row Grid - Ensures side-by-side execution on desktop */
+.pillar-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    padding-bottom: 40px;
-}
-
-.container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(to bottom, #f2ede4, var(--bg-color));
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-}
-
-.tagline {
-    font-size: 1.1rem;
-    color: #615249;
-    margin-top: 8px;
-}
-
-.social-links a {
-    color: var(--accent-color);
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-h2 {
-    font-size: 1.4rem;
-    margin: 40px 0 20px 0;
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
-}
-
-.card {
+.pillar-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keeps buttons aligned if text lengths vary */
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    margin-top: 12px;
-    font-size: 0.9rem;
-}
-
-.btn.secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-}
-
-.gear-list {
-    list-style: none;
-}
-
-.gear-list li {
+.pillar-card h2 {
+    margin-top: 0;
     margin-bottom: 12px;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.gear-list a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
+.pillar-card p {
+    font-size: 0.95rem;
+    color: #554840;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes the button to the bottom cleanly */
 }
 
-.gear-list a:hover {
-    color: var(--accent-color);
-}
-
-footer {
-    text-align: center;
-    margin-top: 60px;
-    font-size: 0.85rem;
-    color: #8c7b70;
+/* Responsive Breakpoint for Mobile Viewports */
+@media (max-width: 600px) {
+    .pillar-row {
+        grid-template-columns: 1fr; /* Stacks vertically into 1 column on mobile screens */
+        gap: 16px;
+    }
 }
